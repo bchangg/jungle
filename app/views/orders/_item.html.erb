@@ -1,0 +1,21 @@
+<tr>
+  <td>
+    <%= item.name %>
+  </td>
+  <td>
+    <%= image_tag item.image.tiny %>
+  </td>
+  <td>
+    <%= item.description %>
+  </td>
+  <td>
+    <%= quantity %>
+  </td>
+  <td>
+    $<%=
+      item.price_cents * quantity / 100.0.floor == item.price_cents * quantity / 100.0 ?
+      item.price_cents * quantity / 100 :
+      item.price_cents * quantity / 100.0
+    %>
+  </td>
+</tr>
