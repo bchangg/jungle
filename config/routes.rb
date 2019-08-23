@@ -2,8 +2,11 @@ Rails.application.routes.draw do
 
   root to: 'products#index'
 
+  get '/about', to: 'about#show'
+
+  # index, new, create, show, edit, update, destroy
   resources :products, only: [:index, :show]
-  resources :categories, only: [:show]
+  resources :categories, except: [:edit, :update, :destroy]
 
   resource :cart, only: [:show] do
     post   :add_item
