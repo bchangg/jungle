@@ -1,4 +1,7 @@
+# frozen_string_literal: true
+
 class OrdersController < ApplicationController
+  before_filter :authorize
 
   def show
     @order = Order.find(params[:id])
@@ -19,7 +22,6 @@ class OrdersController < ApplicationController
     else
       redirect_to cart_path, flash: { error: order.errors.full_messages.first }
     end
-
   rescue Stripe::CardError => e
     redirect_to cart_path, flash: { error: e.message }
   end
@@ -33,10 +35,10 @@ class OrdersController < ApplicationController
 
   def perform_stripe_charge
     Stripe::Charge.create(
-      source:      params[:stripeToken],
-      amount:      cart_subtotal_cents,
+      source: params[:stripeToken],
+      amount: cart_subtotal_cents,
       description: "Khurram Virani's Jungle Order",
-      currency:    'cad'
+      currency: 'cad'
     )
   end
 
@@ -44,7 +46,7 @@ class OrdersController < ApplicationController
     order = Order.new(
       email: params[:stripeEmail],
       total_cents: cart_subtotal_cents,
-      stripe_charge_id: stripe_charge.id, # returned by stripe
+      stripe_charge_id: stripe_charge.id # returned by stripe
     )
 
     enhanced_cart.each do |entry|
@@ -60,5 +62,4 @@ class OrdersController < ApplicationController
     order.save!
     order
   end
-
 end
