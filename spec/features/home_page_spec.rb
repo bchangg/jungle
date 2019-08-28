@@ -7,7 +7,7 @@ RSpec.feature 'Visitor navigates to home page', type: :feature, js: true do
   before :each do
     @category = Category.create! name: 'Apparel'
 
-    10.times do |n|
+    10.times do
       @category.products.create!(
         name: Faker::Hipster.sentence(word_count: 3),
         description: Faker::Hipster.paragraph(sentence_count: 4),
