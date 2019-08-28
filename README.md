@@ -4,7 +4,7 @@ Jungle is a mini e-commerce application built with Rails 4.2 for purposes of tea
 
 The codebase was given to students with a many functions already completed and working, but each student had only 3 to 4 days to familiarize themselves with Ruby on Rails. This was done in order to better simulate what it might be like when we enter the industry and are introduced to our first project.
 
-Ruby was not taught to the students, instead we were given instructions to quickly learn how to learn a new language and how it can relate back to JavaScript, where most of the bootcamp was based.
+Ruby was not taught to the students, instead students were given instructions to quickly learn how to learn a new language and how it can relate back to JavaScript, where most of the bootcamp was based.
 
 ## Setup
 
