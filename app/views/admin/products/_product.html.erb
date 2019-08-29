@@ -11,7 +11,7 @@
     <%= product.category.name %>
   </td>
   <td>
-    $<%= product.price.to_f.floor == product.price ? product.price.to_i : product.price %>
+    $<%= product.price.to_f.floor == product.price.to_f ? product.price.to_i : product.price %>
   </td>
   <td>
     <%= product.quantity %>

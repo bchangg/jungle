@@ -20,5 +20,3 @@ Ruby was not taught to the students, instead students were given instructions to
 * Stripe
 
 ## Screenshots
-
-
